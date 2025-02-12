@@ -11,9 +11,9 @@ results_dt = train_decision_tree(X_train, X_test, y_train, y_test)
 results_rf = train_random_forest(X_train, X_test, y_train, y_test)
 
 # Print results
-print("KNN Results: ", results_knn)
-print("Decision Tree Results: ", results_dt)
-print("Random Forest Results: ", results_rf)
+print("KNN Results: Accuracy: {:.2f}, Precision: {:.2f}, Recall: {:.2f}, F1-Score: {:.2f}".format(*results_knn[:4]))
+print("Decision Tree Results: Accuracy: {:.2f}, Precision: {:.2f}, Recall: {:.2f}, F1-Score: {:.2f}".format(*results_dt[:4]))
+print("Random Forest Results: Accuracy: {:.2f}, Precision: {:.2f}, Recall: {:.2f}, F1-Score: {:.2f}".format(*results_rf[:4]))
 
 # Plot confusion matrices
 plot_confusion_matrix(results_knn[4], "KNN")
